@@ -40,7 +40,7 @@ public class Principal {
 	private void initialize() {
 		frmCrudUsuarioo = new JFrame();
 		frmCrudUsuarioo.setTitle("PRINCIPAL");
-		frmCrudUsuarioo.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josue\\Downloads\\descargar.jpeg"));
+		frmCrudUsuarioo.setIconImage(Toolkit.getDefaultToolkit().getImage(Principal.class.getResource("/Redsociall/descargar.jpeg")));
 		frmCrudUsuarioo.setBounds(100, 100, 647, 427);
 		frmCrudUsuarioo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmCrudUsuarioo.getContentPane().setLayout(null);
@@ -61,7 +61,7 @@ public class Principal {
 		btnPublicacion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				crudPublicacion crudP =new crudPublicacion();
-				crudP.frame.setVisible(true);
+				crudP.frmCrudPublicaccion.setVisible(true);
 			}
 		});
 		btnPublicacion.setFont(new Font("Tahoma", Font.BOLD, 20));

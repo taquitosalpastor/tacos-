@@ -17,7 +17,7 @@ public class DataUsuario {
  }
  public Connection conectar() {
 		try {
-			cx=DriverManager.getConnection("jdbc:mysql://localhost:3306/redsocial2","root","");
+			cx=DriverManager.getConnection("jdbc:mysql://localhost:3306/redsocial3","root","");
 			System.out.println("CONEXION EXITOSA");
 		} catch (SQLException e) {
 			System.out.println("FALLO CONEXION");

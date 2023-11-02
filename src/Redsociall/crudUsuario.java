@@ -79,7 +79,8 @@ public class crudUsuario {
 	}
 	private void initialize() {
 		frmCrudUsuario = new JFrame();
-		frmCrudUsuario.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josue\\Downloads\\descargar.jpeg"));
+		frmCrudUsuario.setIconImage(Toolkit.getDefaultToolkit().getImage(crudUsuario.class.getResource("/Redsociall/descargar (3).jpg")));
+		//frmCrudUsuario.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\josue\\Downloads\\descargar.jpeg"));
 		frmCrudUsuario.setTitle("CRUD USUARIO");
 		frmCrudUsuario.setBounds(100, 100, 627, 599);
 		frmCrudUsuario.setLocationRelativeTo(null);
@@ -180,7 +181,7 @@ public class crudUsuario {
 				}
 			}
 		});
-		btnNewButton.setIcon(new ImageIcon(crudUsuario.class.getResource("/RedSOcial/OIP2.png")));
+		btnNewButton.setIcon(new ImageIcon(crudUsuario.class.getResource("/Redsociall/OIP2.png")));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 17));
 		btnNewButton.setBounds(430, 37, 158, 36);
 		frmCrudUsuario.getContentPane().add(btnNewButton);
@@ -221,7 +222,7 @@ public class crudUsuario {
 				}
 			}
 		});
-		btnActualizar.setIcon(new ImageIcon(crudUsuario.class.getResource("/Redsociall/Actualizar.jpg")));
+	btnActualizar.setIcon(new ImageIcon(crudUsuario.class.getResource("/Redsociall/Actualizar.jpg")));
 		btnActualizar.setFont(new Font("Tahoma", Font.BOLD, 17));
 		btnActualizar.setBounds(430, 94, 158, 36);
 		frmCrudUsuario.getContentPane().add(btnActualizar);
