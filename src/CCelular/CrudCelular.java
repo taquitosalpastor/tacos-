@@ -211,7 +211,7 @@ public class CrudCelular {
 	}
 	public void limpiar() {
 		txtIdCelular.getText();
-		txtMarca.getText();
+		txtMarca.getText("");
 		txtModelo.getText();
 		txtProcesador.getText();
 		txtSistema.getText();
