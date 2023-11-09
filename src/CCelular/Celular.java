@@ -16,14 +16,25 @@ public boolean insertarCel() {
 }
 
 public boolean eliminarCel() {
-	return true;
+	if(dc.eliminarCel(this.getIdcel())) {
+		return true;
+	}
+	return false;
+	
 }
 
 public boolean actualizarCel() {
-	return true;
+	if(dc.actualizarCel(this)) {
+		return true;
+	}
+	return false;
+	
 }
 public boolean cargaCel() {
-	return true;
+	if(dc.cargarCel(this)) {
+		return true;
+	}
+	return false;
 }
 
 public Celular() {

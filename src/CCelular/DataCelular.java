@@ -3,6 +3,7 @@ package CCelular;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DataCelular {
@@ -33,5 +34,73 @@ public boolean insertarCel(Celular c) {
 		e.printStackTrace();
 		return false;
 	}
+	}
+	public boolean cargarCel(Celular c) {
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		try {
+			ps=Conectar().prepareStatement("SELECT * FROM celulares WHERE idcel=?");
+			ps.setInt(1,c.getIdcel());
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				c.setMarca(rs.getString(2));
+				c.setModelo(rs.getString(3));
+				c.setProcesador(rs.getString(4));
+				c.setSistema(rs.getString(5));
+				return true;
+			}else {
+				return false;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	
 }
+	public boolean eliminarCel(int idcel) {
+		PreparedStatement ps=null;
+		try {
+			Celular x=new Celular();
+			x.setIdcel(idcel);
+			if(x.cargaCel()) {
+				ps=Conectar().prepareStatement("DELETE FROM celulares WHERE idcel=?");
+				ps.setInt(1, idcel);
+				ps.execute();
+				return true;
+			}else {
+				return false;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+	}
+	public boolean actualizarCel(Celular c) {
+		PreparedStatement ps=null;
+		try {
+			Celular x=new Celular();
+			x.setIdcel(c.getIdcel());
+			if(x.cargaCel()) {
+				ps=Conectar().prepareStatement("UPDATE  celulares SET marca=?,modelo=?,sistema=?,procesador=?"
+						+"WHERE idCel=? ");
+				
+				
+				ps.setString(1,c.getMarca());
+				ps.setString(2, c.getModelo());
+				ps.setString(3,c.getSistema());
+				ps.setString(4, c.getProcesador());
+				ps.setInt(5,c.getIdcel());
+				ps.execute();
+				return true;
+			}else {
+				return false;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 }

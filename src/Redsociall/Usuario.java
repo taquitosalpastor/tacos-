@@ -12,7 +12,15 @@ public class Usuario {
 		
 		
 	}
-	
+	public boolean login () {
+		if(du.login(this)) {
+			return true;
+		}else {
+			
+		
+		return false;
+	}
+}
 	public boolean insertarUsuario() {
 		if	(du.insertarUsuario(this)) {
 		return true;
@@ -75,5 +83,7 @@ public class Usuario {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
+	
 
 }

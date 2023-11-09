@@ -41,7 +41,26 @@ public class DataUsuario {
 		return false;
 	}
  }
-
+public boolean login (Usuario x) {
+	try {
+		PreparedStatement ps= conectar().prepareStatement("SELECT * FROM usuario WHERE correo=? AND password=?");
+		ps.setString(1, x.getCorreo());
+		ps.setString(2, x.getPassword());
+		ResultSet rs = ps.executeQuery();
+		if(rs.next()) {
+			x.setIdUser(rs.getInt(1));
+			x.setCorreo(rs.getString(2));
+			x.setTelefono(rs.getString(3));
+			x.setPassword(rs.getString(4));
+			x.setNombre(rs.getString(5));
+			return true;
+		}else {
+			return false;
+		}
+	} catch (Exception e) {
+		return false;
+	}
+}
 
 public ArrayList<Usuario> selectUsuarios(){
 	ArrayList<Usuario> listaUsuarios=new ArrayList<Usuario>();

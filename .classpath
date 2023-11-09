@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="src/miprimercrud/mysql-connector-j-8.1.0.jar"/>
 	<classpathentry kind="lib" path="src/Redsociall/commons-codec-1.16.0.jar"/>
 	<classpathentry kind="lib" path="src/CCelular/mysql-connector-j-8.1.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

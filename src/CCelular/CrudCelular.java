@@ -28,6 +28,7 @@ public class CrudCelular {
 	private JButton btnEliminar;
 	private JButton btnCargar;
 	private JButton btnInsertar;
+	Celular cel=new Celular();
 
 	
 	public static void main(String[] args) {
@@ -180,6 +181,22 @@ public class CrudCelular {
 		btnCargar = new JButton("Cargar");
 		btnCargar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					int idcel=Integer.parseInt(JOptionPane.showInputDialog("ID A CARGAR"));
+					cel.setIdcel(idcel);
+					if(cel.cargaCel()) {
+						txtIdCelular.setText(""+cel.getIdcel());
+						txtMarca.setText(cel.getMarca());
+						txtModelo.setText(cel.getModelo());
+						txtProcesador.setText(cel.getProcesador());
+						txtSistema.setText(cel.getSistema());
+						JOptionPane.showMessageDialog(null, "SE CARGO CORRECTAMENTE");
+					}else {
+						JOptionPane.showMessageDialog(null, "ERROR al Insertar");
+						}
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "ERROR al Insertar");
+				}
 			}
 		});
 		btnCargar.setBounds(107, 183, 85, 21);
@@ -188,6 +205,19 @@ public class CrudCelular {
 		btnEliminar = new JButton("Eliminar");
 		btnEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					int idcel=Integer.parseInt(JOptionPane.showInputDialog("Id a Eliminar"));
+					cel.setIdcel(idcel);
+					if(cel.eliminarCel()) {
+						JOptionPane.showMessageDialog(null, "Se elimino Correctamente");
+						
+					}else {
+						JOptionPane.showMessageDialog(null, "ERROR AL CARGAR");
+					}
+				} catch (Exception e2) {
+				 JOptionPane.showMessageDialog(null, "ERROR AL CARGAR");
+				}
+				
 			}
 		});
 		btnEliminar.setBounds(202, 183, 85, 21);
@@ -196,6 +226,21 @@ public class CrudCelular {
 		btnActualizar = new JButton("Actualizar");
 		btnActualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					cel.setIdcel(Integer.parseInt(txtIdCelular.getText()));
+					cel.setMarca(txtMarca.getText());
+					cel.setModelo(txtModelo.getText());
+					cel.setSistema(txtSistema.getText());
+					cel.setProcesador(txtProcesador.getText());
+					if(cel.actualizarCel()) {
+						limpiar();
+						JOptionPane.showMessageDialog(null, "Se actualizo Correctamente");
+					}else {
+						JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+					}
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "ERROR AL ACTUALIZAR");
+				}
 			}
 		});
 		btnActualizar.setBounds(311, 183, 85, 21);
@@ -204,16 +249,17 @@ public class CrudCelular {
 		btnLimpiar = new JButton("Limpiar");
 		btnLimpiar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				limpiar();
 			}
 		});
 		btnLimpiar.setBounds(311, 144, 85, 21);
 		frmCrudCelular.getContentPane().add(btnLimpiar);
 	}
 	public void limpiar() {
-		txtIdCelular.getText();
-		txtMarca.getText("");
-		txtModelo.getText();
-		txtProcesador.getText();
-		txtSistema.getText();
+		txtIdCelular.setText("");
+		txtMarca.setText("");
+		txtModelo.setText("");
+		txtProcesador.setText("");
+		txtSistema.setText("");
 	}
 }
