@@ -1,5 +1,6 @@
 package producto;
 
+
 public class Producto {
 int idproducto;
 String nombre;
@@ -8,7 +9,39 @@ String precio;
 String existencia;
 String descripcion;
 String unidad;
+DataProducto dc=new DataProducto();
 
+public boolean insertarProducto() {
+	if(dc.insertarProducto(this)) {
+		return true;
+	}
+	return false;
+}
+
+public boolean eliminarProducto() {
+	if(dc.eliminarProducto(this.getIdproducto())) {
+		return true;
+	}
+	return false;
+	
+}
+
+public boolean actualizarProducto() {
+	if(dc.actualizarProducto(this)) {
+		return true;
+	}
+	return false;
+	
+}
+public boolean cargarProducto() {
+	if(dc.cargarProducto(this)) {
+		return true;
+	}
+	return false;
+}
+public Producto(){
+	
+}
 public int getIdproducto() {
 	return idproducto;
 }
