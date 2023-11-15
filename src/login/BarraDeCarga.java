@@ -11,6 +11,7 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.border.LineBorder;
 
 public class BarraDeCarga {
 
@@ -19,9 +20,7 @@ public class BarraDeCarga {
 	private JButton btnStart;
 	String  Nombre="";
 
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -35,9 +34,7 @@ public class BarraDeCarga {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
+	
 	public BarraDeCarga() {
 		initialize();
 		Start();
@@ -71,17 +68,18 @@ public class BarraDeCarga {
 	
 	private void initialize() {
 		frmBarrraDeProgreso = new JFrame();
-		frmBarrraDeProgreso.setIconImage(Toolkit.getDefaultToolkit().getImage(BarraDeCarga.class.getResource("/login/lon.jpg")));
 		frmBarrraDeProgreso.setTitle("Barra de Progreso");
-		frmBarrraDeProgreso.setBounds(100, 100, 450, 156);
-		frmBarrraDeProgreso.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmBarrraDeProgreso.setBounds(100, 100, 425, 37);
 		frmBarrraDeProgreso.getContentPane().setLayout(null);
 		frmBarrraDeProgreso.setLocationRelativeTo(null);
+		frmBarrraDeProgreso.setUndecorated(true);
 		
 		progressBar = new JProgressBar();
-		progressBar.setForeground(new Color(128, 128, 192));
+		progressBar.setBackground(new Color(176, 255, 255));
+		progressBar.setBorder(new LineBorder(new Color(255, 185, 185), 3));
+		progressBar.setForeground(new Color(176, 255, 255));
 		progressBar.setStringPainted(true);
-		progressBar.setBounds(92, 31, 243, 22);
+		progressBar.setBounds(0, 0, 426, 38);
 		frmBarrraDeProgreso.getContentPane().add(progressBar);
 		
 		

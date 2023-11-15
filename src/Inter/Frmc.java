@@ -56,7 +56,8 @@ import javax.swing.JPanel;
 	        frmFarmaciaUsuario.setBackground(new Color(128, 255, 255));
 	        frmFarmaciaUsuario.getContentPane().setBackground(new Color(128, 255, 255));
 	        frmFarmaciaUsuario.setTitle("Farmacia Usuario");
-	        frmFarmaciaUsuario.setBounds(100, 100, 432, 292);
+	        frmFarmaciaUsuario.setExtendedState(JFrame.MAXIMIZED_BOTH);
+	        frmFarmaciaUsuario.setBounds(100, 100, 473, 292);
 	        frmFarmaciaUsuario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        frmFarmaciaUsuario.getContentPane().setLayout(null);
 	        frmFarmaciaUsuario.setLocationRelativeTo(null);
@@ -110,18 +111,18 @@ import javax.swing.JPanel;
 	        
 			lblHora = new JLabel("");
 			lblHora.setBorder(new LineBorder(new Color(14, 203, 218), 2, true));
-			lblHora.setBounds(282, 32, 91, 25);
+			lblHora.setBounds(358, 13, 91, 25);
 			frmFarmaciaUsuario.getContentPane().add(lblHora);
 			
 			JLabel lblNewLabel_2 = new JLabel("DevProg Innovations");
 			lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 13));
-			lblNewLabel_2.setBounds(246, 175, 142, 21);
+			lblNewLabel_2.setBounds(240, 163, 142, 21);
 			frmFarmaciaUsuario.getContentPane().add(lblNewLabel_2);
 			
 			panel = new JPanel();
 			panel.setBorder(new LineBorder(new Color(0, 221, 221), 2, true));
 			panel.setBackground(new Color(0, 221, 221));
-			panel.setBounds(20, 192, 372, 50);
+			panel.setBounds(20, 192, 429, 50);
 			frmFarmaciaUsuario.getContentPane().add(panel);
 			panel.setLayout(null);
 			
@@ -139,7 +140,7 @@ import javax.swing.JPanel;
 			
 			JLabel lblNewLabel_1 = new JLabel("");
 			lblNewLabel_1.setIcon(new ImageIcon(Frmc.class.getResource("/Imag/Farmlog.jpg")));
-			lblNewLabel_1.setBounds(231, 54, 161, 127);
+			lblNewLabel_1.setBounds(230, 44, 161, 127);
 			frmFarmaciaUsuario.getContentPane().add(lblNewLabel_1);
 
 			

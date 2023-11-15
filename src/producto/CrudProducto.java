@@ -265,7 +265,6 @@ public class CrudProducto {
 				} catch (Exception e2) {
 					JOptionPane.showMessageDialog(null, "ERROR al Insertar");
 				}
-			
 			}
 		});
 		btnCargar.setFont(new Font("Tahoma", Font.BOLD, 19));

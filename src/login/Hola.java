@@ -33,19 +33,16 @@ public class Hola {
 		frmHola = new JFrame();
 		frmHola.setIconImage(Toolkit.getDefaultToolkit().getImage(Hola.class.getResource("/Redsociall/descargar.jpeg")));
 		frmHola.setTitle("hola");
-		frmHola.setBounds(100, 100, 605, 363);
+		frmHola.setBounds(100, 100, 418, 830);
 		frmHola.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmHola.getContentPane().setLayout(null);
+		frmHola.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		frmHola.setLocationRelativeTo(null);
+	
 		
 		JLabel lblNewLabel = new JLabel("HOLA");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 93));
 		lblNewLabel.setBounds(0, -11, 292, 155);
 		frmHola.getContentPane().add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(Hola.class.getResource("/Redsociall/descargar (3).jpg")));
-		lblNewLabel_1.setBounds(281, 37, 380, 279);
-		frmHola.getContentPane().add(lblNewLabel_1);
 	}
 }

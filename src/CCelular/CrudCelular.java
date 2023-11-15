@@ -209,6 +209,7 @@ public class CrudCelular {
 					int idcel=Integer.parseInt(JOptionPane.showInputDialog("Id a Eliminar"));
 					cel.setIdcel(idcel);
 					if(cel.eliminarCel()) {
+						limpiar();
 						JOptionPane.showMessageDialog(null, "Se elimino Correctamente");
 						
 					}else {
